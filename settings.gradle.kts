@@ -1,3 +1,5 @@
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 pluginManagement {
     repositories {
         google {
@@ -21,5 +23,17 @@ dependencyResolutionManagement {
 
 rootProject.name = "ConJam"
 include(":app")
+
 include(":feature")
 include(":feature:home")
+
+include(":core:data")
+include(":core:data:concert")
+include(":core:data:concert-api")
+
+include(":core:domain")
+include(":core:domain:concert")
+
+include(":core:model")
+include(":core:model:concert")
+include(":core:domain:concert-api")
