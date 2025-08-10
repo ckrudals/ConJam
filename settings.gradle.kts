@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "ConJam"
 include(":app")
 include(":feature")
+include(":feature:home")
