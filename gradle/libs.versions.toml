@@ -1,6 +1,8 @@
 [versions]
-agp = "8.11.1"
-kotlin = "2.0.21"
+appGradlePlugin = "8.11.1"
+androidDesugarJdkLibs = "2.1.5"
+kotlin = "2.1.21"
+ksp = "2.1.21-2.0.1"
 coreKtx = "1.10.1"
 junit = "4.13.2"
 junitVersion = "1.1.5"
@@ -14,8 +16,16 @@ retrofit = "2.11.0"
 okhttp = "4.12.0"
 hilt = "2.57"
 androidx-hilt = "1.2.0"
+coroutine = "1.10.2"
 
 [libraries]
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "appGradlePlugin" }
+android-desugarJdkLibs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "androidDesugarJdkLibs" }
+kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+plugin-kotlin-serializationPlugin = { module = "org.jetbrains.kotlin:kotlin-serialization", version.ref = "kotlin" }
+coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutine" }
+coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutine" }
+coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutine" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -38,14 +48,17 @@ retrofit-converter-simplexml = { group = "com.squareup.retrofit2", name = "conve
 okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
 okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
-hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
+hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
 hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "androidx-hilt" }
 hilt-work = { group = "androidx.hilt", name = "hilt-work", version.ref = "androidx-hilt" }
 
 [plugins]
-android-application = { id = "com.android.application", version.ref = "agp" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+android-application = { id = "com.android.application", version.ref = "appGradlePlugin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
-android-library = { id = "com.android.library", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "appGradlePlugin" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 
+conjam-android-library = { id = "conjam.android.library", version = "unspecified" }
+conjam-kotlin-library = { id = "conjam.kotlin.library", version = "unspecified" }

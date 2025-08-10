@@ -1,6 +1,5 @@
 plugins {
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.conjam.android.library)
 }
 
 android {
@@ -12,5 +11,5 @@ dependencies {
     implementation(projects.core.data.concertApi)
 
     implementation(libs.hilt.android)
-    implementation(libs.hilt.compiler)
+    implementation(libs.hilt.android.compiler)
 }
