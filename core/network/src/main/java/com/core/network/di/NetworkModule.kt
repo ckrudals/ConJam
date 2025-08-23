@@ -1,5 +1,6 @@
 package com.core.network.di
 
+import com.core.network.BuildConfig
 import com.core.network.service.PerformanceService
 import dagger.Module
 import dagger.Provides
@@ -24,7 +25,9 @@ internal class NetworkModule {
         .writeTimeout(30, TimeUnit.SECONDS)
         .addNetworkInterceptor(
             HttpLoggingInterceptor().apply {
-                level = HttpLoggingInterceptor.Level.BODY
+                if (BuildConfig.DEBUG){
+                    level = HttpLoggingInterceptor.Level.BODY
+                }
             }
         ).build()
 
