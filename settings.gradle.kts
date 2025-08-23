@@ -22,3 +22,8 @@ dependencyResolutionManagement {
 rootProject.name = "ConJam"
 include(":app")
 include(":feature")
+include(
+    ":core:data",
+    ":core:network",
+    ":core:model"
+)
