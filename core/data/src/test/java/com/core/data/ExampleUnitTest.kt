@@ -1,4 +1,4 @@
-package com.km.conjam
+package com.core.data
 
 import org.junit.Test
 
